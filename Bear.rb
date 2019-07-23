@@ -6,7 +6,7 @@ class Bear
 
     @name = name
     @type = type
-    @stomach = [] #bear should have empty stomach so let's assume
+    @stomach = [] #bear should have empty stomach so let's assume that with every instance of bear you create - they are hungry.
 
   end
 
@@ -14,8 +14,8 @@ class Bear
     return @stomach.count
   end
 
-  def eat_fish()
-
+  def eat_fish(fish)
+    @stomach.push(fish)
   end
 
 end
