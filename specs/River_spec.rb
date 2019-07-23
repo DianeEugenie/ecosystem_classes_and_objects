@@ -1,8 +1,3 @@
-
-
-# A bear could have a food_count method
-# A river could have a fish_count method
-
 require('minitest/autorun')
 require('minitest/rg')
 require_relative("../River.rb")
@@ -46,8 +41,6 @@ class RiverTest < MiniTest::Test
     #Assert
     assert_equal(8, @river.fish_count)
   end
-
-
 
 
 end

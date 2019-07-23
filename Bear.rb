@@ -10,12 +10,16 @@ class Bear
 
   end
 
-  def stomach()
+  def stomach() #functions as the food_count method
     return @stomach.count
   end
 
   def eat_fish(fish)
     @stomach.push(fish)
+  end
+
+  def roar()
+    return "ROAARRR!!"
   end
 
 end
