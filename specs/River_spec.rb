@@ -1,18 +1,27 @@
 
-# A bear should have a name e.g. "Yogi" and a type e.g. "Grizzly"
-# A bear should have an empty stomach ( maybe an array )
+
 # A bear could have a food_count method
 # A river could have a fish_count method
 
 require('minitest/autorun')
 require('minitest/rg')
 require_relative("../River.rb")
+require_relative("../Fish.rb")
 
 class RiverTest < MiniTest::Test
 
   def setup()
 
-    @river = River.new("Flow", 500)
+    @river = River.new("Flow")
+
+    @fish1 = Fish.new("Nora")
+    @fish2 = Fish.new("Boris")
+    @fish3 = Fish.new("Donald")
+    @fish4 = Fish.new("Teddy")
+    @fish5 = Fish.new("Nero")
+    @fish6 = Fish.new("Dora")
+    @fish7 = Fish.new("Pete")
+    @fish8 = Fish.new("Bruce")
 
   end
 
@@ -21,6 +30,20 @@ class RiverTest < MiniTest::Test
   end
 
   def test_get_fish_count()
+    assert_equal(0, @river.fish_count)
+  end
+
+  def test_add_fish_to_river()
+    #Act
+    @river.add_fish(@fish1)
+    @river.add_fish(@fish2)
+    @river.add_fish(@fish3)
+    @river.add_fish(@fish4)
+    @river.add_fish(@fish5)
+    @river.add_fish(@fish6)
+    @river.add_fish(@fish7)
+    @river.add_fish(@fish8)
+    #Assert
     assert_equal(8, @river.fish_count)
   end
 

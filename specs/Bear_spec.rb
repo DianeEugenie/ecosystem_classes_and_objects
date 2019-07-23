@@ -25,7 +25,7 @@ class BearTest < MiniTest::Test
 
   def test_can_bear_eat_fish()
     #Arrange
-    fish1 = Fish.new("Nemo")
+    fish1 = Fish.new("Trump")
     #Act
     @bear.eat_fish(fish1)
     #Assert
@@ -33,10 +33,6 @@ class BearTest < MiniTest::Test
   end
 
 end
-
-
-
-
 
 
 
