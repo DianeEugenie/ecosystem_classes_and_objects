@@ -8,11 +8,15 @@ class River
 
   attr_reader :name, :fish_count
 
-  def initialize(name, fish_count)
+  def initialize(name, fishes)
 
     @name = name
-    @fish_count = fish_count
+    @fishes = ["Flora", "Flauna", "Bora", "Teddy", "Bruce", "Renaldo", "Dora", "Pete"]
 
+  end
+
+  def fish_count()
+    @fishes.count()
   end
 
 end

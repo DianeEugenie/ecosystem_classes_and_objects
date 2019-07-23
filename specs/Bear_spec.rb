@@ -1,6 +1,8 @@
 require('minitest/autorun')
 require('minitest/rg')
 require_relative("../Bear.rb")
+require_relative("../Fish.rb")
+require_relative("../River.rb")
 
 class BearTest < MiniTest::Test
 
@@ -17,6 +19,18 @@ class BearTest < MiniTest::Test
     assert_equal("Giant Panda", @bear.type)
   end
 
+  def test_check_if_stomach_is_empty()
+    assert_equal(0, @bear.stomach)
+  end
+
+  # def test_can_stomach_be_filled()
+  #   #Arrange
+  #   fish1 = Fish.new("Nemo")
+  #
+  #   #Assert
+  #   assert_equal(1, @bear.stomach)
+  # end
+
 end
 
 
@@ -24,7 +38,7 @@ end
 
 
 
-# A bear should have a name e.g. "Yogi" and a type e.g. "Grizzly"
+
 # A bear should have an empty stomach ( maybe an array )
 # A bear could have a food_count method
 # A river could have a fish_count method
