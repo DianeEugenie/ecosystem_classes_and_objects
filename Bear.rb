@@ -1,3 +1,5 @@
+require("pry")
+
 class Bear
 
   attr_reader :name, :type
@@ -17,6 +19,17 @@ class Bear
   def eat_fish(fish)
     @stomach.push(fish)
   end
+
+  def take_fish_from_river(river)
+
+    for fish in river.fishes()
+    river.lose_fish(fish)
+    end
+
+    eat_fish(fish)
+  end
+
+
 
   def roar()
     return "ROAARRR!!"

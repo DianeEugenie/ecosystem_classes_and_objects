@@ -2,6 +2,7 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative("../River.rb")
 require_relative("../Fish.rb")
+require_relative("../Bear.rb")
 
 class RiverTest < MiniTest::Test
 
@@ -25,8 +26,19 @@ class RiverTest < MiniTest::Test
   end
 
   def test_get_fish_count()
-    assert_equal(0, @river.fish_count)
+    assert_equal(0, @river.count_fishes)
   end
+
+  def test_find_array_of_fishes()
+    #Arrange
+    @river.add_fish(@fish1)
+    @river.add_fish(@fish2)
+    @river.add_fish(@fish3)
+    #Assert
+    assert_equal(3, @river.fishes.count)
+
+  end
+
 
   def test_add_fish_to_river()
     #Act
@@ -39,18 +51,18 @@ class RiverTest < MiniTest::Test
     @river.add_fish(@fish7)
     @river.add_fish(@fish8)
     #Assert
-    assert_equal(8, @river.fish_count)
+    assert_equal(8, @river.count_fishes)
   end
 
 
-  def test_remove_fish_from_river()
+  def test_lose_fish_from_river()
     #Arrange
     @river.add_fish(@fish1)
     @river.add_fish(@fish2)
     #Act
-    @river.remove_fish(@fish1)
+    @river.lose_fish(@fish1)
     #Assert
-    assert_equal(1, @river.fish_count)
+    assert_equal(1, @river.count_fishes)
   end
 
 

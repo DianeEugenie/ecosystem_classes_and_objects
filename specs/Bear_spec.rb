@@ -25,9 +25,9 @@ class BearTest < MiniTest::Test
 
   def test_can_bear_eat_fish()
     #Arrange
-    fish1 = Fish.new("Trump")
+    fish = Fish.new("Trump")
     #Act
-    @bear.eat_fish(fish1)
+    @bear.eat_fish(fish)
     #Assert
     assert_equal(1, @bear.stomach)
   end
@@ -37,14 +37,28 @@ class BearTest < MiniTest::Test
   end
 
   def test_bear_take_fish_from_river()
-    #Arrange
-    
+    #Arrange - create a river
+    @river1 = River.new("Luna")
+    #create fish
+    @fish1 = Fish.new("Donald")
+    @fish2 = Fish.new("Boris")
+    #add fishes to the river
+    @river1.add_fish(@fish1)
+    @river1.add_fish(@fish2)
 
-
-
+    #Act - take fish from the rivre
+    @bear.take_fish_from_river(@river1)
+    #Assert - 1 fish should be left in the river and 1 fish should be in the bear's stomach.
+    assert_equal(1, @river1.count_fishes())
+    assert_equal(1, @bear.stomach())
   end
 
+
+
 end
+
+
+
 
 
 # A bear should be able to take a fish from the river

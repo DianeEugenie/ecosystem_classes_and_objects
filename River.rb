@@ -6,7 +6,7 @@
 
 class River
 
-  attr_reader :name
+  attr_reader :name, :fishes
 
   def initialize(name)
 
@@ -19,11 +19,15 @@ class River
     @fishes.push(fish)
   end
 
-  def fish_count()
+  def fishes()
+    return @fishes
+  end
+
+  def count_fishes()
     @fishes.count()
   end
 
-  def remove_fish(fish)
+  def lose_fish(fish)
     @fishes.delete(fish)
   end
 
