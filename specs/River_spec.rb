@@ -43,4 +43,15 @@ class RiverTest < MiniTest::Test
   end
 
 
+  def test_remove_fish_from_river()
+    #Arrange
+    @river.add_fish(@fish1)
+    @river.add_fish(@fish2)
+    #Act
+    @river.remove_fish(@fish1)
+    #Assert
+    assert_equal(1, @river.fish_count)
+  end
+
+
 end

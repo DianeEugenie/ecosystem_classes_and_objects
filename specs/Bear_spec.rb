@@ -36,7 +36,13 @@ class BearTest < MiniTest::Test
     assert_equal("ROAARRR!!", @bear.roar)
   end
 
+  def test_bear_take_fish_from_river()
+    #Arrange
+    
 
+
+
+  end
 
 end
 
