@@ -12,21 +12,19 @@ class Bear
 
   end
 
-  def stomach() #functions as the food_count method
-    return @stomach.count
+  def food_count() #functions as the food_count method
+    return @stomach.count()
   end
 
-  def eat_fish(fish)
+  def add_fish(fish)
     @stomach.push(fish)
   end
 
-  def take_fish_from_river(river)
-
-    for fish in river.fishes()
-    river.lose_fish(fish)
-    end
-
-    eat_fish(fish)
+  def eat_fish_from_river(river)
+    #first get the fish from the river
+    fish = river.lose_fish
+    #bear eats the fish
+    add_fish(fish)
   end
 
 

@@ -8,27 +8,24 @@ class River
 
   attr_reader :name, :fishes
 
-  def initialize(name)
+  def initialize(name, fish)
 
     @name = name
-    @fishes = []
+    @fish = fish
 
+  end
+
+  def fish_count()
+    @fish.size()
   end
 
   def add_fish(fish)
-    @fishes.push(fish)
+    @fish.push(fish)
   end
 
-  def fishes()
-    return @fishes
-  end
 
-  def count_fishes()
-    @fishes.count()
-  end
-
-  def lose_fish(fish)
-    @fishes.delete(fish)
+  def lose_fish()
+    return @fish.pop()
   end
 
 
